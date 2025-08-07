@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Redefinir Senha - SaldoPrime</title>
+  <link rel="stylesheet" href="{% static 'css/usuariocss/confirmar_recuperacao.css' %}">
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <div class="login-card">
+      <h2>Definir nova senha</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Redefinir Senha</button>
+      </form>
+
+      {% if messages %}
+        <div class="mensagens">
+          {% for message in messages %}
+            <p class="{{ message.tags }}">{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>

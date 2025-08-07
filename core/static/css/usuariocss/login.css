@@ -1,0 +1,121 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+.login-body {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container central */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+/* Card */
+.login-card {
+  background-color: #1e1e2f;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Logo e título */
+.logo-login {
+  margin-bottom: 30px;
+}
+
+.logo-img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.logo-login h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Formulário */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #cccccc;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #2d2d44;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  background-color: #3a3a55;
+}
+
+/* Erro de login */
+.erro-login {
+  color: #ff4d4f;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Botão de login */
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-login:hover {
+  background: linear-gradient(to right, #5c0ecb, #1f65dc);
+}
+
+/* Links */
+.login-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.login-links a {
+  color: #a0bfff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-links a:hover {
+  color: #ffffff;
+}

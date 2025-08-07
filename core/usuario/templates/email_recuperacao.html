@@ -1,0 +1,12 @@
+Olá {{ user.get_full_name|default:user.username }},
+
+Você solicitou a redefinição da sua senha no SaldoPrime.
+
+Clique no link abaixo para redefinir sua senha:
+
+{{ protocol }}://{{ domain }}{% url 'password_reset_confirm' uidb64=uid token=token %}
+
+Se você não solicitou essa alteração, por favor ignore este e-mail.
+
+Obrigado!  
+Equipe SaldoPrime

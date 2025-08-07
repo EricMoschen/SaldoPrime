@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/menucss/receitas_despesas.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="tela-container">
+  <h1 class="titulo">Cadastrar Receita ou Despesa</h1>
+
+  <div class="card form-wrapper">
+    <form method="post" novalidate>
+      {% csrf_token %}
+
+      {{ form.tipo_conta.label_tag }}
+      {{ form.tipo_conta }}
+
+      {{ form.valor.label_tag }}
+      {{ form.valor }}
+
+      {{ form.descricao.label_tag }}
+      {{ form.descricao }}
+
+      <div id="bloco_tipo_receita" class="hidden">
+        {{ form.tipo_receita.label_tag }}
+        {{ form.tipo_receita }}
+      </div>
+
+      <div id="bloco_metodo_pagamento" class="hidden">
+        {{ form.metodo_pagamento.label_tag }}
+        {{ form.metodo_pagamento }}
+      </div>
+
+      <div id="bloco_parcelas" class="hidden">
+        {{ form.total_parcelas.label_tag }}
+        {{ form.total_parcelas }}
+
+        {{ form.valor_parcela.label_tag }}
+        {{ form.valor_parcela }}
+      </div>
+
+      {{ form.data_vencimento.label_tag }}
+      {{ form.data_vencimento }}
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const tipoContaSelect = document.getElementById("id_tipo_conta");
+  const metodoPagamentoSelect = document.getElementById("id_metodo_pagamento");
+  const tipoReceitaDiv = document.getElementById("bloco_tipo_receita");
+  const metodoPagamentoDiv = document.getElementById("bloco_metodo_pagamento");
+  const parcelasDiv = document.getElementById("bloco_parcelas");
+  const totalParcelasInput = document.getElementById("id_total_parcelas");
+  const valorParcelaInput = document.getElementById("id_valor_parcela");
+  const valorInput = document.getElementById("id_valor");
+
+  function atualizarCampos() {
+    if (!tipoContaSelect) return;
+
+    const tipo = tipoContaSelect.value.toLowerCase();
+    const metodo = metodoPagamentoSelect ? metodoPagamentoSelect.value : '';
+
+    // Esconde tudo inicialmente
+    if (tipoReceitaDiv) tipoReceitaDiv.classList.add("hidden");
+    if (metodoPagamentoDiv) metodoPagamentoDiv.classList.add("hidden");
+    if (parcelasDiv) parcelasDiv.classList.add("hidden");
+
+    if (tipo === "receita") {
+      if (tipoReceitaDiv) tipoReceitaDiv.classList.remove("hidden");
+    } else if (tipo === "despesa") {
+      if (metodoPagamentoDiv) metodoPagamentoDiv.classList.remove("hidden");
+
+      if (metodo === "Crédito") {
+        if (parcelasDiv) parcelasDiv.classList.remove("hidden");
+      } else {
+        if (totalParcelasInput) totalParcelasInput.value = 1;
+        if (parcelasDiv) parcelasDiv.classList.add("hidden");
+        if (valorParcelaInput) valorParcelaInput.value = valorInput.value || "";
+      }
+    }
+  }
+
+  function atualizarValorParcela() {
+    if (!valorInput || !totalParcelasInput || !valorParcelaInput) return;
+
+    const total = parseFloat(valorInput.value) || 0;
+    const parcelas = parseInt(totalParcelasInput.value) || 1;
+    valorParcelaInput.value = (total / parcelas).toFixed(2);
+  }
+
+  if (tipoContaSelect) {
+    tipoContaSelect.addEventListener("change", () => {
+      atualizarCampos();
+      atualizarValorParcela();
+    });
+  }
+
+  if (metodoPagamentoSelect) {
+    metodoPagamentoSelect.addEventListener("change", () => {
+      atualizarCampos();
+      atualizarValorParcela();
+    });
+  }
+
+  if (valorInput) {
+    valorInput.addEventListener("input", atualizarValorParcela);
+  }
+
+  if (totalParcelasInput) {
+    totalParcelasInput.addEventListener("input", atualizarValorParcela);
+  }
+
+  // Inicializa visibilidade e valores no carregamento da página
+  atualizarCampos();
+  atualizarValorParcela();
+});
+</script> 
+
+{% endblock %}

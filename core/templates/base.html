@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SaldoPrime</title>
+        <link rel="stylesheet" href="{% static 'css/menucss/menu.css' %}">
+
+        {% block head %}
+
+        {% endblock %}
+
+    </head>
+
+    <header>
+        <!-- Logo do SaldoPrime -->
+        <div class="logo-container">
+            <img src="{% static 'img/logo.png' %}" alt="Logo do SaldoPrime"
+                class="logo">
+        </div>
+
+        <!-- Botão hamburguer (só aparece no mobile) -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Menu lateral (mobile) -->
+        <nav class="menu-mobile" id="menu-mobile">
+            <a href="{% url 'dashboard' %}">📊 Dashboard</a>
+            <a href="{% url 'receitas_despesas' %}"> 💰Receita / 💸Despesa</a>
+            <a href="{% url 'contas_futuras' %}">📅 Contas Futuras</a>
+            <a href="{% url 'relatorios' %}">📈 Relatórios</a>
+            <a href="{% url 'configuracoes' %}">⚙️ Configurações</a>
+            <a href="{% url 'logout' %}">🚪 Sair</a>
+        </nav>
+
+        <!-- Menu topo (desktop) -->
+        <nav class="menu-desktop">
+            <ul>
+                <li><a href="{% url 'dashboard' %}">📊 Dashboard</a></li>
+                <li><a href="{% url 'receitas_despesas' %}"> 💰Receita /
+                        💸Despesa</a></li>
+                <li><a href="{% url 'contas_futuras' %}">📅 Contas
+                        Futuras</a></li>
+                <li><a href="{% url 'relatorios' %}">📈 Relatórios</a></li>
+                <li><a href="{% url 'configuracoes' %}">⚙️
+                        Configurações</a></li>
+                <li><a href="{% url 'logout' %}">🚪 Sair</a></li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        {% block content %}
+        <!-- Conteúdo da página -->
+        {% endblock %}
+    </body>
+    <script src="{% static 'js/jsmenu/menu.js' %}"></script>
+</html>

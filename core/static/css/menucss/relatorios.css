@@ -1,0 +1,78 @@
+.filtros-relatorio {
+  margin: 2rem auto;
+  max-width: 800px;
+  background: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.filtros-relatorio select,
+.filtros-relatorio button {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.filtros-relatorio button {
+  background-color: #6c5ce7;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filtros-relatorio button:hover {
+  background-color: #5a4bdc;
+}
+
+.cards-relatorio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.card-relatorio {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 280px;
+}
+
+.card-relatorio h2 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.card-relatorio p {
+  font-size: 1.6rem;
+  color: #16a085;
+  font-weight: bold;
+}
+
+.grafico-relatorio {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.grafico-relatorio .grafico-exemplo {
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.grafico-relatorio .info {
+  margin-top: 1rem;
+  color: #999;
+  font-size: 0.9rem;
+}

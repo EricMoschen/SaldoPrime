@@ -1,0 +1,103 @@
+/* static/css/menuos/receitas_despesas.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #2c3e50;
+  min-height: 100vh;
+}
+
+/* Container principal */
+.tela-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.titulo {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  text-align: left;
+}
+
+.card label {
+  font-weight: 600;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  color: #34495e;
+}
+
+.card input,
+.card select {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card input:focus,
+.card select:focus {
+  border-color: #8e2de2;
+  outline: none;
+  box-shadow: 0 0 8px rgba(142, 45, 226, 0.4);
+}
+
+.card button {
+  margin-top: 2rem;
+  background-color: #4a00e0;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(74, 0, 224, 0.6);
+}
+
+.card button:hover {
+  background-color: #3c00b8;
+  box-shadow: 0 6px 16px rgba(60, 0, 184, 0.8);
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 20px;
+  }
+
+  .tela-container {
+    padding: 1rem;
+    max-width: 90%;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+}

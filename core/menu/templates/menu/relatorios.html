@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/menucss/relatorios.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="tela-container">
+  <h1 class="titulo">📊 Relatórios Financeiros</h1>
+
+  <div class="filtros-relatorio">
+    <form method="get">
+      <label for="mes">Mês:</label>
+      <select name="mes" id="mes">
+        <option value="08">Agosto</option>
+        <option value="07">Julho</option>
+        <option value="06">Junho</option>
+        <!-- Adicione mais conforme necessário -->
+      </select>
+
+      <label for="ano">Ano:</label>
+      <select name="ano" id="ano">
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+      </select>
+
+      <button type="submit">Filtrar</button>
+    </form>
+  </div>
+
+  <div class="cards-relatorio">
+    <div class="card-relatorio">
+      <h2>💰 Total de Receitas</h2>
+      <p>R$ 5.320,00</p>
+    </div>
+
+    <div class="card-relatorio">
+      <h2>💸 Total de Despesas</h2>
+      <p>R$ 3.150,00</p>
+    </div>
+
+    <div class="card-relatorio">
+      <h2>📅 Contas Futuras</h2>
+      <p>R$ 1.200,00 agendados</p>
+    </div>
+  </div>
+
+  <div class="grafico-relatorio">
+    <img src="{% static 'images/grafico_exemplo.png' %}" alt="Gráfico de exemplo" class="grafico-exemplo">
+    <p class="info">* Em breve, gráficos interativos!</p>
+  </div>
+</div>
+
+<script src="{% static 'jsmenu/relatorios.js' %}"></script>
+{% endblock %}

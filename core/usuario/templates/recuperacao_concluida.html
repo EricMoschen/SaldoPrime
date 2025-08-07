@@ -1,0 +1,16 @@
+<!-- templates/usuario/password_reset_complete.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Recuperação Concluída - SaldoPrime</title>
+        <link rel="stylesheet" href="{% static 'css/usuariocss/recuperacao_concluida.css' %}">
+    </head>
+    <body >
+        <h2>Senha alterada com sucesso!</h2>
+        <p>Agora você pode fazer login com sua nova senha.</p>
+        <a href="{% url 'login' %}">Fazer login</a>
+
+    </body>
+</html>

@@ -1,0 +1,154 @@
+/* GERAL */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f4f4;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* LOGO */
+.logo-container {
+  display: flex;
+  position: fixed;
+  top: 0.5rem;
+  left: 2rem;
+  z-index: 1100;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  border-radius: 100%;
+}
+
+/* MENU DESKTOP */
+.menu-desktop {
+  background-color: #2c3e50;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-desktop ul {
+  list-style: none;
+  display: flex;
+  gap: 6rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-desktop ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.menu-desktop ul li a:hover {
+  color: #1abc9c;
+}
+
+/* BOTÃO HAMBURGUER */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  height: 4px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* MENU LATERAL (MOBILE) */
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 260px;
+  height: 100vh;
+  background-color: #2c3e50;
+  padding: 5rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.menu-mobile.active {
+  left: 0;
+}
+
+.menu-mobile a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.menu-mobile a:hover {
+  color: #1abc9c;
+}
+
+/* CONTEÚDO */
+.conteudo {
+  padding: 2rem;
+  margin-top: 7rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1600px) {
+  .menu-desktop ul {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 1300px) {
+  .menu-desktop ul{
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .logo-container {
+    left: 1rem;
+  }
+
+  .logo {
+    width: 50px;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  .menu-mobile {
+    width: 220px;
+    padding: 4rem 1rem;
+  }
+
+  .menu-mobile a {
+    font-size: 1rem;
+  }
+
+  .logo {
+    width: 40px;
+  }
+}

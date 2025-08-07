@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar Senha - SaldoPrime</title>
+<link rel="stylesheet" href="{% static 'css/usuariocss/recuperacao_senha.css' %}">
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <div class="login-card">
+      <div class="logo-login">
+        <img src="{% static 'img/logo_saldoprime.png' %}" alt="Logo SaldoPrime" class="logo-img">
+        <h2>Recuperar Senha</h2>
+      </div>
+
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="email">Informe seu e-mail</label>
+          <input type="email" name="email" id="email" required>
+        </div>
+
+        {% if form.errors %}
+          <p class="erro-login">Verifique o e-mail informado.</p>
+        {% endif %}
+
+        <button type="submit" class="btn-login">Enviar Link</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

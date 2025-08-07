@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/menucss/contas_futuras.css' %}">
+{% endblock  %}
+
+
+{% block content %}
+<div class="tela-container">
+  <h1 class="titulo">📅 Contas Futuras</h1>
+
+  <div class="cards">
+    <div class="card nova-conta">
+      <h2>Agendar Nova Conta</h2>
+      <form method="post">
+        {% csrf_token %}
+        <input type="text" name="descricao" placeholder="Descrição da conta" required>
+        <input type="number" name="valor" placeholder="Valor (R$)" step="0.01" required>
+        <input type="date" name="vencimento" required>
+        <button type="submit">Agendar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="lista-contas">
+    <h2>Contas Agendadas</h2>
+    <ul>
+      <!-- Exemplo estático, você pode renderizar do backend depois -->
+      <li>💡 Luz - R$ 150,00 - Vence em 10/08/2025</li>
+      <li>📱 Celular - R$ 89,99 - Vence em 15/08/2025</li>
+      <li>🏠 Aluguel - R$ 1.200,00 - Vence em 01/09/2025</li>
+    </ul>
+  </div>
+</div>
+
+<script src="{% static 'jsmenu/contas_futuras.js' %}"></script>
+{% endblock %}

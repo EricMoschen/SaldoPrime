@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/menucss/dashboard.css' %}">
+{% endblock head %}
+
+
+
+
+{% block content %}
+
+<h1 class="titulo-dashboard">📊 Painel de Controle</h1>
+
+<div class="cards-dashboard">
+    <div class="card">
+        <h2>Saldo Atual</h2>
+        <p>R$ 8.250,00</p>
+    </div>
+
+    <div class="card">
+        <h2>Receitas do Mês</h2>
+        <p>R$ 3.200,00</p>
+    </div>
+
+    <div class="card">
+        <h2>Despesas do Mês</h2>
+        <p>R$ 1.890,00</p>
+    </div>
+
+    <div class="card">
+        <h2>Contas a Pagar</h2>
+        <p>R$ 450,00</p>
+    </div>
+</div>
+
+<div class="grafico">
+    <h2>Resumo Gráfico</h2>
+    <img src="{% static 'img/logo.png' %}" alt="Gráfico de exemplo"
+        class="grafico-img">
+</div>
+
+<script src="{% static 'jsmenu/dashboard.js' %}"></script>
+{% endblock %}

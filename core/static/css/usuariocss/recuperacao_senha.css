@@ -1,0 +1,124 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+.login-body {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Container central */
+.login-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+/* Card principal */
+.login-card {
+  background-color: #1e1e2f;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Logo e título */
+.logo-login {
+  margin-bottom: 30px;
+}
+
+.logo-img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.logo-login h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Formulário */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #cccccc;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #2d2d44;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: #999;
+}
+
+.form-group input:focus {
+  outline: none;
+  background-color: #3a3a55;
+  box-shadow: 0 0 5px rgba(106, 17, 203, 0.7);
+}
+
+/* Mensagem de erro */
+.erro-login {
+  color: #ff4d4f;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Botão de envio */
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.btn-login:hover {
+  background: linear-gradient(to right, #5c0ecb, #1f65dc);
+  box-shadow: 0 0 10px rgba(92, 14, 203, 0.8);
+}
+
+.btn-login:focus {
+  outline: none;
+  box-shadow: 0 0 12px rgba(106, 17, 203, 0.9);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+}
